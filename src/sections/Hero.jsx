@@ -9,6 +9,8 @@ import Target from "../components/Target.jsx";
 import ReactLogo from "../components/ReactLogo.jsx";
 import Cube from "../components/Cube.jsx";
 import Rings from "../components/Rings.jsx";
+import HeroCamera from "../components/HeroCamera.jsx";
+import {Button} from "leva/stories/inputs/Button.stories.js";
 
 const Hero = () => {
     const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -36,23 +38,32 @@ const Hero = () => {
 
                             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
-                            <HackerRoom
-                                scale={sizes.deskScale}
-                                position={sizes.deskPosition}
-                                rotation={[0,-Math.PI,0]}
-                            />
+                            <HeroCamera isMobile={isMobile}>
+                                <HackerRoom
+                                    scale={sizes.deskScale}
+                                    position={sizes.deskPosition}
+                                    rotation={[0,-Math.PI,0]}
+                                />
+                            </HeroCamera>
 
-                            <group>
+                            {/*<group>
                                 <Target position={sizes.targetPosition} />
                                 <ReactLogo position={sizes.reactLogoPosition} />
                                 <Cube position={sizes.cubePosition} />
                                 <Rings position={sizes.ringPosition} />
-                            </group>
+                            </group>*/}
+
                             <ambientLight intensity={1} />
                             <directionalLight position={[10,10,10]} intensity={0.5}/>
                         </Suspense>
                     </Canvas>
                 </div>
+
+            <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+                <a href="#contact" className="w-fit">
+                    <Button />
+                </a>
+            </div>
         </section>
     )
 }
