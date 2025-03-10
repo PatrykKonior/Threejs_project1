@@ -10,7 +10,7 @@ import ReactLogo from "../components/ReactLogo.jsx";
 import Cube from "../components/Cube.jsx";
 import Rings from "../components/Rings.jsx";
 import HeroCamera from "../components/HeroCamera.jsx";
-import {Button} from "leva/stories/inputs/Button.stories.js";
+import Button from "../components/Button.jsx"
 
 const Hero = () => {
     const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -60,8 +60,8 @@ const Hero = () => {
                 </div>
 
             <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
-                <a href="#contact" className="w-fit">
-                    <Button />
+                <a  className="w-fit">
+                    <Button name="Rozpocznijmy razem współpracę" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
                 </a>
             </div>
         </section>
